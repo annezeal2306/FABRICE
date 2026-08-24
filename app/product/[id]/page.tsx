@@ -10,7 +10,7 @@ import {
   Plus,
   MapPin,
 } from "lucide-react";
-
+import {useRouter} from "next/navigation";
 import { products } from "@/data/products";
 import { useCartStore } from "@/store/cartStore";
 import { useWishlistStore } from "@/store/wishlistStore";
@@ -29,7 +29,7 @@ export default function ProductPage({
   ======================================== */
 
   const { id } = use(params);
-
+  const router = useRouter();
   const productId = Number(id);
 
   /* ========================================
@@ -136,32 +136,31 @@ export default function ProductPage({
   ======================================== */
 
   const handleAddToBag = () => {
-    if (!selectedSize) return;
+  if (!selectedSize) return;
 
-    addToCart(
-      product,
-      selectedSize,
-      quantity
-    );
-    
+  addToCart(
+    product,
+    selectedSize,
+    quantity
+  );
+
+  setAddedToBag(true);
+
+  setTimeout(() => {
+    setAddedToBag(false);
+  }, 2000);
 };
 const handleBuyNow = () => {
-    if (!selectedSize) return;
+  if (!selectedSize) return;
 
-    addToCart(
-      product,
-      selectedSize,
-      quantity
-    );
+  addToCart(
+    product,
+    selectedSize,
+    quantity
+  );
 
-  window.location.href = "/checkout";
-    setAddedToBag(true);
-
-    // Reset the button after a short time
-    setTimeout(() => {
-      setAddedToBag(false);
-    }, 1800);
-  };
+  router.push("/checkout");
+};
 
   /* ========================================
      PAGE
