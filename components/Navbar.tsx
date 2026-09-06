@@ -7,14 +7,23 @@ import {
   ShoppingBag,
   X,
   ChevronDown,
+  UserRound,
 } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import {
+  useSession,
+  signOut,
+} from "next-auth/react";
 import { products } from "@/data/products";
 import { useCartStore } from "@/store/cartStore";
 import { useWishlistStore } from "@/store/wishlistStore";
 
 export default function Navbar() {
+  const {
+  data: session,
+  status,
+} = useSession();
   const totalItems = useCartStore(
     (state) => state.getTotalItems()
   );
@@ -430,6 +439,43 @@ const [searchQuery, setSearchQuery] =
     className="transition-opacity hover:opacity-50"
   />
 </button>
+{/* ACCOUNT */}
+
+{status !== "loading" && (
+  <>
+    {session?.user ? (
+      <Link
+        href="/account"
+        aria-label="Account"
+        className="flex items-center gap-2 transition-opacity hover:opacity-50"
+      >
+        <UserRound
+          size={20}
+          strokeWidth={1.4}
+        />
+
+        <span className="hidden xl:block text-[9px] font-bold uppercase tracking-[0.16em]">
+          Account
+        </span>
+      </Link>
+    ) : (
+      <Link
+        href="/login"
+        aria-label="Login"
+        className="flex items-center gap-2 transition-opacity hover:opacity-50"
+      >
+        <UserRound
+          size={20}
+          strokeWidth={1.4}
+        />
+
+        <span className="hidden xl:block text-[9px] font-bold uppercase tracking-[0.16em]">
+          Login
+        </span>
+      </Link>
+    )}
+  </>
+)}
 
             {/* WISHLIST */}
 

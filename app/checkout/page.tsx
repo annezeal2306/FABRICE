@@ -2,27 +2,69 @@
 
 import Link from "next/link";
 import { ArrowLeft, Check, Lock } from "lucide-react";
-import { useState } from "react";
-
 import { useCartStore } from "@/store/cartStore";
-
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 export default function CheckoutPage() {
+  const router = useRouter();
+
+const {
+  data: session,
+  status,
+} = useSession();
+const [form, setForm] = useState({
+  name: "",
+  phone: "",
+  email: "",
+  address: "",
+  city: "",
+  state: "",
+  pincode: "",
+});
+const [placed, setPlaced] = useState(false);
+useEffect(() => {
+  
+  if (status === "unauthenticated") {
+    router.replace(
+      "/login?callbackUrl=/checkout"
+    );
+  }
+}, [status, router]);
+// useEffect(() => {
+//   if (status !== "authenticated" || !session?.user) {
+//     return;
+//   }
+
+//   setForm((previous) => ({
+//     ...previous,
+//     name: previous.name || session.user.name || "",
+//     email: previous.email || session.user.email || "",
+//   }));
+// }, [status, session]);
   const items = useCartStore((state) => state.items);
     const clearCart = useCartStore(
   (state) => state.clearCart
 );
-  const [form, setForm] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    address: "",
-    city: "",
-    state: "",
-    pincode: "",
-  });
+if (status === "loading") {
+  return (
+    <main className="flex min-h-[75vh] items-center justify-center bg-[#f5f3ee]">
+      <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-black/40">
+        Checking Account...
+      </p>
+    </main>
+  );
+}
 
-  const [placed, setPlaced] = useState(false);
-
+if (status === "unauthenticated") {
+  return (
+    <main className="flex min-h-[75vh] items-center justify-center bg-[#f5f3ee]">
+      <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-black/40">
+        Redirecting to Login...
+      </p>
+    </main>
+  );
+}
   const subtotal = items.reduce(
     (total, item) =>
       total + item.product.price * item.quantity,
@@ -233,7 +275,7 @@ export default function CheckoutPage() {
                     required
                     type="text"
                     placeholder="Full Name"
-                    value={form.name}
+                    value={form.name ||(session?.user?.name ?? "")}
                     onChange={(e) =>
                       updateField(
                         "name",
