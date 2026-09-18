@@ -60,7 +60,7 @@ export const useWishlistStore = create<WishlistStore>()(
       },
     }),
     {
-      name: "fabrice-wishlist",
+      name: "velmori-wishlist",
     }
   )
 );

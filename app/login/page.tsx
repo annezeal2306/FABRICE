@@ -102,7 +102,7 @@ export default function LoginPage() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-[360px] text-sm leading-6 text-black/50">
-            Sign in to your FABRICE account to continue shopping.
+            Sign in to your VELMORI account to continue shopping.
           </p>
         </div>
 
