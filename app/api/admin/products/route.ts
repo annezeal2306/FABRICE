@@ -15,7 +15,7 @@ export async function GET() {
     }
 
     const client = await clientPromise;
-    const db = client.db("VELMORI");
+    const db = client.db("fabrice");
 
     const products = await db
       .collection("products")
@@ -123,7 +123,7 @@ export async function POST(request: Request) {
     }
 
     const client = await clientPromise;
-    const db = client.db("VELMORI");
+    const db = client.db("fabrice");
 
     const productsCollection =
       db.collection("products");

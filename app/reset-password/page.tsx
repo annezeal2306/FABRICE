@@ -3,16 +3,8 @@
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
-import { Suspense } from "react";
 
 export default function ResetPasswordPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <ResetPasswordContent />
-    </Suspense>
-  );
-}
-function ResetPasswordContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -96,7 +88,7 @@ function ResetPasswordContent() {
 
         <div className="mb-12 text-center">
           <p className="mb-4 text-[9px] font-bold uppercase tracking-[0.3em] text-black/40">
-            VELMORI / ACCOUNT
+            FABRICE / ACCOUNT
           </p>
 
           <h1 className="text-5xl font-black tracking-[-0.06em] sm:text-6xl">
@@ -104,7 +96,7 @@ function ResetPasswordContent() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-[360px] text-sm leading-6 text-black/50">
-            Create a new password for your VELMORI account.
+            Create a new password for your FABRICE account.
           </p>
         </div>
 

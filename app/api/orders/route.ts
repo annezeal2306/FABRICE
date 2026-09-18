@@ -104,7 +104,7 @@ export async function POST(request: Request) {
     }
 
     const client = await clientPromise;
-    const db = client.db("VELMORI");
+    const db = client.db("fabrice");
 
     const order = {
       userId: new ObjectId(session.user.id),

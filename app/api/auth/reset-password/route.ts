@@ -37,7 +37,7 @@ export async function POST(request: Request) {
       .digest("hex");
 
     const client = await clientPromise;
-    const db = client.db("VELMORI");
+    const db = client.db("fabrice");
 
     const resetToken =
       await db.collection("passwordResetTokens").findOne({

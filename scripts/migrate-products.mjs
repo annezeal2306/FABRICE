@@ -77,7 +77,7 @@ const products = [
   },
   {
     id: 6,
-    name: "VELMORI Varsity Jacket",
+    name: "Fabrice Varsity Jacket",
     category: "Outerwear",
     gender: "Unisex",
     price: 2499,
@@ -245,7 +245,7 @@ const client = new MongoClient(uri);
 try {
   await client.connect();
 
-  const db = client.db("VELMORI");
+  const db = client.db("fabrice");
   const collection = db.collection("products");
 
   console.log(`Migrating ${products.length} products...`);

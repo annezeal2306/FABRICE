@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VELMORI",
+  title: "FABRICE",
   description: "Modern fashion. Simple shopping.",
 };
 

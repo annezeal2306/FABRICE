@@ -28,7 +28,7 @@ function toOrder(doc: OrderDocument): Order {
 
 async function getOrdersCollection() {
   const client = await clientPromise;
-  const db = client.db("VELMORI");
+  const db = client.db("fabrice");
   return db.collection<OrderDocument>("orders");
 }
 

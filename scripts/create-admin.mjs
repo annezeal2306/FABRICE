@@ -27,7 +27,7 @@ const client = new MongoClient(uri);
 try {
   await client.connect();
 
-  const db = client.db("VELMORI");
+  const db = client.db("fabrice");
   const admins = db.collection("admins");
 
   const existingAdmin = await admins.findOne({ email });

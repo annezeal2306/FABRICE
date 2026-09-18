@@ -42,7 +42,6 @@ Thumbs.db
 *.swp
 *.swo
 .vs/
-
 # OS files
 .DS_Store
 Desktop.ini

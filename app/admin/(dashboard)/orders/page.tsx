@@ -2,7 +2,7 @@
 
 export default async function AdminOrdersPage() {
   const client = await clientPromise;
-  const db = client.db("VELMORI");
+  const db = client.db("fabrice");
 
   const orders = await db
     .collection("orders")

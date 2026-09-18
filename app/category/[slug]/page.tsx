@@ -32,7 +32,7 @@ export default async function CategoryPage({
     try {
       const client = await clientPromise;
 
-      const db = client.db("VELMORI");
+      const db = client.db("fabrice");
 
       const products =
         await db
@@ -82,7 +82,7 @@ export default async function CategoryPage({
         <div className="mx-auto max-w-[1600px]">
 
           <p className="mb-4 text-[10px] uppercase tracking-[0.3em] text-black/40">
-            VELMORI / {title}
+            FABRICE / {title}
           </p>
 
           <div className="flex items-end justify-between gap-8">
@@ -94,7 +94,7 @@ export default async function CategoryPage({
               </h1>
 
               <p className="mt-6 max-w-md text-sm leading-6 text-black/50">
-                Discover the latest VELMORI pieces
+                Discover the latest FABRICE pieces
                 designed for your everyday wardrobe.
               </p>
 
