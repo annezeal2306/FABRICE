@@ -32,7 +32,7 @@ export default async function CategoryPage({
     try {
       const client = await clientPromise;
 
-      const db = client.db("velmori");
+      const db = client.db("VELMORI");
 
       const products =
         await db

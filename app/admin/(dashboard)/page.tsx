@@ -2,7 +2,7 @@ import clientPromise from "@/lib/mongodb";
 
 export default async function AdminDashboard() {
   const client = await clientPromise;
-  const db = client.db("velmori");
+  const db = client.db("VELMORI");
 
   const [productsCount, ordersCount, customersCount, revenueResult] =
     await Promise.all([

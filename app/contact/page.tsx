@@ -40,10 +40,10 @@ export default function ContactPage() {
             </h2>
 
             <a
-              href="mailto:support@velmori.com"
+              href="mailto:support@VELMORI.com"
               className="text-gray-300 underline underline-offset-4 transition hover:text-white"
             >
-              support@velmori.com
+              support@VELMORI.com
             </a>
           </section>
 

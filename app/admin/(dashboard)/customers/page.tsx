@@ -9,7 +9,7 @@ type Customer = {
 
 export default async function CustomersPage() {
   const client = await clientPromise;
-  const db = client.db("velmori");
+  const db = client.db("VELMORI");
 
   const customers =
     (await db
