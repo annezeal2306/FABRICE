@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     const normalizedEmail = email.trim().toLowerCase();
 
     const client = await clientPromise;
-    const db = client.db("fabrice");
+    const db = client.db("velmori");
 
     const user = await db.collection("users").findOne({
       email: normalizedEmail,

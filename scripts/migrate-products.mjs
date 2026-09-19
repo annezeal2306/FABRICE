@@ -245,7 +245,7 @@ const client = new MongoClient(uri);
 try {
   await client.connect();
 
-  const db = client.db("fabrice");
+  const db = client.db("velmori");
   const collection = db.collection("products");
 
   console.log(`Migrating ${products.length} products...`);

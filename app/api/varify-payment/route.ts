@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     }
 
     const client = await clientPromise;
-    const db = client.db("fabrice");
+    const db = client.db("velmori");
 
     // Update the order status to PAID in MongoDB
     const result = await db.collection("orders").updateOne(

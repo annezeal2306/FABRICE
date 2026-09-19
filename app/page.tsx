@@ -48,7 +48,7 @@ const collections = [
 export default async function Home() {
   const client = await clientPromise;
 
-const db = client.db("fabrice");
+const db = client.db("velmori");
 
 const productDocuments =
   await db
