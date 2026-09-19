@@ -8,10 +8,10 @@ const shopLinks = [
 ];
 
 const helpLinks = [
-  { label: "Shipping", href: "#" },
-  { label: "Returns", href: "#" },
-  { label: "FAQ", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Shipping", href: "/shipping" },
+  { label: "Returns", href: "/returns" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const brandLinks = [
