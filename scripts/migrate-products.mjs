@@ -77,7 +77,7 @@ const products = [
   },
   {
     id: 6,
-    name: "Velmori Varsity Jacket",
+    name: "VELMORI Varsity Jacket",
     category: "Outerwear",
     gender: "Unisex",
     price: 2499,

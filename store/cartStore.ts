@@ -100,7 +100,7 @@ export const useCartStore = create<CartStore>()(
       },
     }),
     {
-      name: "Velmori-cart",
+      name: "VELMORI-cart",
     }
   )
 );
